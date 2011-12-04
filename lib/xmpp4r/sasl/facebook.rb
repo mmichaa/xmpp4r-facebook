@@ -4,6 +4,7 @@ module Jabber
   module SASL
     class Facebook < Base
       SERVER = 'chat.facebook.com'
+      RESOURCE = 'fb_xmpp_script'
       MECHANISM = 'X-FACEBOOK-PLATFORM'
       API_VERSION = '1.0'
 
@@ -40,7 +41,7 @@ module Jabber
         response['method'] = @method
         response['nonce'] = @nonce
         response['access_token'] = @access_token
-        response['api_key'] = @api_key
+        response['api_key'] = @app_key
         response['call_id'] = @call_id
         response['v'] = API_VERSION
         @call_id += 1
